@@ -109,15 +109,15 @@ export const programs = [
   },
   {
     id: "empower-youth-football",
-    title: "Empower Youth Football Coaching",
+    title: "Football Coaching Camp – Empower Youth Programme",
     slug: "empower-youth-football-camp",
-    shortDesc: "Structured football learning for children aged 10–15, with skills and life habits developed through consistent effort.",
-    fullDesc: "Structured football learning for children aged 10–15 under the Empower Youth programme led by MLA Manoj Moothedan. Focuses on ball mastery, passing, teamwork, practice habits, and building confidence.",
-    actionText: "View Camp Details",
+    shortDesc: "Structured football training for children aged 10–15, focusing on football skills, physical fitness, teamwork, discipline and confidence.",
+    fullDesc: "The Football Coaching Camp is an initiative of Flexon Sports Foundation under its Empower Youth Programme, inaugurated by MLA Manoj Moothedan (3 October 2026 to 27 February 2027). The camp provides structured football training for children aged 10–15, focusing on football skills, physical fitness, teamwork, discipline and confidence.",
+    actionText: "View Camp & 33 Photos",
     actionLink: "/programs/empower-youth-football-camp",
-    badge: "Active Camp (Oct 2026 – Feb 2027)",
+    badge: "3 Oct 2026 – 27 Feb 2027",
     category: "Football",
-    image: "/assets/animated/football-camp-animated.jpg"
+    image: "/assets/gallery/football-coaching-camp/football-camp-01.jpg"
   },
   {
     id: "veteran-sixes",
@@ -436,9 +436,29 @@ export const events = [
       { name: "Akshayakalpa Organic", role: "Official Nutrition Partner" }
     ],
     summary: "The inaugural edition of FLEXATHON brought runners and families to ESCI Campus in Hyderabad under the banner of SDG 4: Quality Education.",
-    image: "/assets/animated/flexathon-hyderabad-animated.jpg",
-    galleryCount: 6,
+    image: "/assets/hero/flexathon-hyd-hero-1.jpg",
+    galleryCount: 39,
     resultsLink: "https://flexathonrun.org/"
+  },
+  {
+    id: "football-coaching-camp-2026",
+    title: "Football Coaching Camp – Empower Youth Programme",
+    slug: "empower-youth-football-camp",
+    initiative: "Empower Youth",
+    city: "Perumbavoor, Kerala",
+    venue: "Perumbavoor Boys Higher Secondary School Ground, Kerala",
+    date: "3 October 2026 to 27 February 2027",
+    status: "Active Camp",
+    registrationStatus: "Guardian Enquiries Open",
+    lifecycle: "Ongoing",
+    categories: ["Age Group: 10–15 Years", "Football Skills & Fitness", "Teamwork & Discipline"],
+    themeGoal: 4,
+    themeTitle: "Quality Education & Youth Development",
+    summary: "Organised by Flexon Sports Foundation and inaugurated by MLA Manoj Moothedan under the Empower Youth Programme, providing structured football training for children aged 10–15.",
+    image: "/assets/hero/football-camp-hero-1.jpg",
+    galleryCount: 33,
+    actionText: "View Camp & 33 Photos",
+    actionLink: "/programs/empower-youth-football-camp"
   },
   {
     id: "flexathon-kochi",
@@ -611,89 +631,773 @@ export const faqs = [
 
 /**
  * Gallery Albums
+ * Dedicated folder for FLEXATHON Hyderabad 2026: /assets/gallery/flexathon-hyderabad/
  */
 export const galleryAlbums = [
   {
     id: "hyderabad-2026",
-    title: "FLEXATHON Hyderabad 2026 - First Edition",
-    subtitle: "ESCI Campus, Gachibowli • 18 October 2026",
+    title: "FLEXATHON Hyderabad 2026 — First Edition Archive",
+    shortTitle: "FLEXATHON Hyderabad 2026",
+    subtitle: "ESCI Campus, Gachibowli • 18 October 2026 • SDG 4: Quality Education",
     date: "18 Oct 2026",
+    isoDate: "2026-10-18",
+    year: "2026",
     city: "Hyderabad",
+    venue: "ESCI Campus, Gachibowli",
+    sport: "running",
+    sportLabel: "Running & Athletics",
+    sportIcon: "🏃",
     initiative: "FLEXATHON",
-    cover: "/assets/animated/flexathon-hyderabad-animated.jpg",
-    count: 4,
+    sdg: "SDG 4: Quality Education",
+    featured: true,
+    folder: "/assets/gallery/flexathon-hyderabad",
+    cover: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-14.jpg",
+    count: 39,
+    categories: [
+      { id: "all", label: "All Moments", icon: "📸" },
+      { id: "flag-off", label: "Flag-Off & Start Line", icon: "🏁" },
+      { id: "community-waves", label: "5K & 3K Waves", icon: "🏃" },
+      { id: "warm-up", label: "Warm-Up & Assembly", icon: "🔥" },
+      { id: "podium-awards", label: "Podium & Awards", icon: "🏆" }
+    ],
     items: [
       {
-        id: "hyd-1",
-        src: "/assets/animated/flexathon-hyderabad-animated.jpg",
-        caption: "Runners gather at the starting arch in Hyderabad celebrating active living.",
-        alt: "FLEXATHON Hyderabad start line runners"
+        id: "hyd-14",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-14.jpg",
+        caption: "Official flag-off at the FLEXATHON starting arch inside ESCI Campus, Gachibowli, with foundation leadership and race marshals.",
+        alt: "FLEXATHON Hyderabad 2026 official flag-off at the starting arch",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape",
+        featured: true
       },
       {
-        id: "hyd-2",
-        src: "/assets/brand/flexathon-run.jpeg",
-        caption: "FLEXATHON official event branding and running community participants.",
-        alt: "FLEXATHON community runners"
+        id: "hyd-05",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-05.jpg",
+        caption: "10K Challenge athletes surge across the electronic chip-timing mat as the inaugural Hyderabad race gets underway.",
+        alt: "10K runners crossing the start line at FLEXATHON Hyderabad",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape",
+        featured: true
       },
       {
-        id: "hyd-3",
-        src: "/assets/animated/flexathon-runners-animated.jpg",
-        caption: "FLEXATHON visual theme: United by Sport, Driven by Global Goals.",
-        alt: "Athletic runners in motion"
+        id: "hyd-21",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-21.jpg",
+        caption: "Multi-generational spirit on course: youth runners, families, and senior athletes striding together in the 3K Community Run.",
+        alt: "Families and young runners in the 3K Community Run",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape",
+        featured: true
       },
       {
-        id: "hyd-4",
-        src: "/assets/brand/flexathon-logo.jpeg",
-        caption: "Official FLEXATHON Run identity and Quality Education theme focus.",
-        alt: "FLEXATHON Run official emblem"
+        id: "hyd-01",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-01.jpg",
+        caption: "Young finisher honored on the FLEXATHON stage with an official achievement certificate championing SDG 4: Quality Education.",
+        alt: "Young runner receiving certificate on the FLEXATHON stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "portrait",
+        featured: true
+      },
+      {
+        id: "hyd-38",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-38.jpg",
+        caption: "Pre-race warm-up and stretching session led by official 10K pacers and fitness instructors at dawn on ESCI Campus.",
+        alt: "Runners and 10K pacer stretching during pre-race warm-up",
+        category: "warm-up",
+        categoryLabel: "Warm-Up & Assembly",
+        orientation: "landscape",
+        featured: true
+      },
+      {
+        id: "hyd-24",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-24.jpg",
+        caption: "Women's 10K Fastest Runner 1st Prize presentation on the main stage with Flexon Sports Foundation leadership.",
+        alt: "Women's 10K winner receiving prize cheque on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape",
+        featured: true
+      },
+      {
+        id: "hyd-02",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-02.jpg",
+        caption: "5K and 10K participants assembling at the ESCI Campus plaza for morning mobility drills prior to flag-off.",
+        alt: "Runners warming up before the race at ESCI Campus Gachibowli",
+        category: "warm-up",
+        categoryLabel: "Warm-Up & Assembly",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-03",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-03.jpg",
+        caption: "Front-row 10K runners lined up under the FLEXATHON arch awaiting the official starter's flag.",
+        alt: "10K runners at the starting line arch",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-04",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-04.jpg",
+        caption: "The white FLEXATHON flag drops as the lead pack of 10K endurance runners accelerates off the start line.",
+        alt: "Starter waving the white FLEXATHON flag for the 10K start",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-06",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-06.jpg",
+        caption: "Runners in official maroon SDG 4 Quality Education race jerseys streaming through the start gantry.",
+        alt: "Wave of runners crossing the start mat",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-07",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-07.jpg",
+        caption: "High energy and focused determination as the 10K field clears the Centenary Convention Centre stretch.",
+        alt: "10K participants running past the start arch",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-08",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-08.jpg",
+        caption: "Pace runners and club athletes building momentum along the tree-lined ESCI Campus circuit.",
+        alt: "Endurance runners crossing the timing mat",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-09",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-09.jpg",
+        caption: "Hundreds of runners uniting for Quality Education (SDG 4) during the morning flag-off wave.",
+        alt: "Crowd of runners departing the FLEXATHON start arch",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-10",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-10.jpg",
+        caption: "Community runners and corporate squads cheering as they cross the starting threshold together.",
+        alt: "Runners smiling and striding through the start line",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-11",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-11.jpg",
+        caption: "Final wave of 10K Challenge athletes setting out onto the Gachibowli campus course.",
+        alt: "10K runners setting off from the starting arch",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-12",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-12.jpg",
+        caption: "Dignitaries and Flexon Sports Foundation founders raising the flag to launch the 5K Timed Run category.",
+        alt: "5K category flag-off ceremony at FLEXATHON Hyderabad",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-13",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-13.jpg",
+        caption: "5K runners poised at the starting mat seconds before the horn sounds at ESCI Campus.",
+        alt: "5K runners ready at the starting line",
+        category: "flag-off",
+        categoryLabel: "Flag-Off & Start",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-15",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-15.jpg",
+        caption: "Lead 5K runners sprinting off the line as applause echoes across the starting arena.",
+        alt: "Lead 5K runners sprinting across the timing mat",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-16",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-16.jpg",
+        caption: "Youth and adult participants side by side in the 5K wave, embodying inclusive athletic participation.",
+        alt: "5K wave of runners moving through the start gantry",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-17",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-17.jpg",
+        caption: "Steady stream of 5K fitness runners embarking on the scenic campus route.",
+        alt: "5K runners passing beneath the FLEXATHON arch",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-18",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-18.jpg",
+        caption: "Runners checking their GPS watches and pacing rhythm as the 5K pack opens up.",
+        alt: "5K participants checking watches as they cross the start",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-19",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-19.jpg",
+        caption: "Smiles and camaraderie among 5K participants representing local schools, colleges, and tech campuses.",
+        alt: "Group of 5K runners smiling on the course",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-20",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-20.jpg",
+        caption: "3K Community Run flag-off bringing together first-time runners, students, and families.",
+        alt: "3K Community Run start wave at ESCI Campus",
+        category: "community-waves",
+        categoryLabel: "5K & 3K Waves",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-22",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-22.jpg",
+        caption: "Stage address and guest felicitation honoring institutional partners at the post-run presentation ceremony.",
+        alt: "Founders and guests of honor on the FLEXATHON stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-23",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-23.jpg",
+        caption: "Men's 10K Fastest Runner 1st Prize winner awarded ₹10,000 cheque and championship certificate on stage.",
+        alt: "Men's 10K first place winner receiving prize cheque",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-25",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-25.jpg",
+        caption: "Men's 10K Runner-Up honored with cash award and framed merit certificate by foundation leaders.",
+        alt: "Men's 10K second place podium presentation",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-26",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-26.jpg",
+        caption: "Women's category podium finisher receiving official prize award and applause from the Hyderabad running community.",
+        alt: "Women's podium winner receiving prize cheque on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-27",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-27.jpg",
+        caption: "Top-3 podium finisher celebrated on stage during the FLEXATHON Hyderabad prize distribution.",
+        alt: "Podium finisher receiving framed certificate and cheque",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-28",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-28.jpg",
+        caption: "Women's distance category winner recognized for outstanding pace and sportsmanship.",
+        alt: "Female runner receiving award cheque on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-29",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-29.jpg",
+        caption: "Men's 5K Fastest Runner 1st Prize winner presented with official award cheque and certificate.",
+        alt: "Men's 5K first place winner on stage with leadership team",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-30",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-30.jpg",
+        caption: "5K category podium finisher receiving honors from the Flexon Sports Foundation leadership panel.",
+        alt: "5K podium winner receiving prize award",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-31",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-31.jpg",
+        caption: "Young brothers sharing a proud moment on stage as youth category achievement certificates are presented.",
+        alt: "Young participants receiving achievement certificate on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-32",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-32.jpg",
+        caption: "Celebrating podium excellence and community spirit under the Global Goals emblem.",
+        alt: "Athlete receiving merit certificate on the FLEXATHON stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-33",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-33.jpg",
+        caption: "Finisher recognition ceremony highlighting dedication and athletic perseverance.",
+        alt: "Runner honored with framed certificate by Flexon founders",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-34",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-34.jpg",
+        caption: "3rd Place podium certificate presented to a 5K Women's category standout finisher.",
+        alt: "Female runner receiving 3rd place certificate on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-35",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-35.jpg",
+        caption: "Honoring top category performers from across Hyderabad's running clubs and campuses.",
+        alt: "Category winner receiving framed certificate on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-36",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-36.jpg",
+        caption: "1st Place Women's category medalist displaying her finisher medal and championship certificate.",
+        alt: "Women's 1st place medalist holding certificate and medal",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-37",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-37.jpg",
+        caption: "2nd Place Women's category runner celebrated on the FLEXATHON stage at ESCI Campus.",
+        alt: "Women's 2nd place finisher receiving certificate on stage",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
+      },
+      {
+        id: "hyd-39",
+        src: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-39.jpg",
+        caption: "Men's category podium winner receiving prize cheque during the closing ceremony.",
+        alt: "Men's category podium finisher receiving cheque and certificate",
+        category: "podium-awards",
+        categoryLabel: "Podium & Awards",
+        orientation: "landscape"
       }
     ]
   },
   {
     id: "football-training",
-    title: "Empower Youth Football Coaching",
-    subtitle: "Youth training sessions for ages 10–15 • Kerala",
-    date: "October 2026 – Ongoing",
+    title: "Football Coaching Camp – Empower Youth Programme",
+    shortTitle: "Football Coaching Camp (Empower Youth)",
+    subtitle: "Organised by Flexon Sports Foundation • Inaugurated by MLA Manoj Moothedan • Ages 10–15 • 3 Oct 2026 – 27 Feb 2027",
+    organisedBy: "Flexon Sports Foundation",
+    inauguratedBy: "MLA Manoj Moothedan",
+    programme: "Empower Youth",
+    ageGroup: "10–15 years",
+    trainingPeriod: "3 October 2026 to 27 February 2027",
+    description:
+      "The Football Coaching Camp is an initiative of Flexon Sports Foundation under its Empower Youth Programme. The camp provides structured football training for children aged 10–15, focusing on football skills, physical fitness, teamwork, discipline and confidence. The programme aims to encourage young talent and promote sports participation among children.",
+    date: "3 Oct 2026 – 27 Feb 2027",
+    isoDate: "2026-10-03",
+    year: "2026",
     city: "Perumbavoor, Kerala",
+    venue: "Perumbavoor Boys HSS Ground, Kerala",
+    sport: "football",
+    sportLabel: "Football",
+    sportIcon: "⚽",
     initiative: "Empower Youth",
-    cover: "/assets/animated/football-camp-animated.jpg",
-    count: 2,
+    sdg: "SDG 3 & SDG 4",
+    featured: true,
+    folder: "/assets/gallery/football-coaching-camp",
+    cover: "/assets/gallery/football-coaching-camp/football-camp-01.jpg",
+    count: 33,
+    categories: [
+      { id: "all", label: "All Moments", icon: "📸" },
+      { id: "pitch-kickoff", label: "Pitch Kick-Off & Drills", icon: "⚽" },
+      { id: "camp-inauguration", label: "MLA Inauguration", icon: "🎙️" },
+      { id: "youth-orientation", label: "Youth Squad & Orientation", icon: "👥" }
+    ],
     items: [
       {
-        id: "fb-1",
-        src: "/assets/animated/football-camp-animated.jpg",
-        caption: "Youth football coaching camp focusing on ball control, teamwork, and active habits.",
-        alt: "Youth football coaching camp"
+        id: "fc-01",
+        src: "/assets/gallery/football-coaching-camp/football-camp-01.jpg",
+        caption: "Ceremonial kick-off at the Football Coaching Camp (Empower Youth Programme) with MLA Manoj Moothedan, guests, and young trainees aged 10–15.",
+        alt: "Ceremonial kick-off at Football Coaching Camp Empower Youth Programme",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape",
+        featured: true
       },
       {
-        id: "fb-2",
-        src: "/assets/animated/hero-sports-animated.jpg",
-        caption: "Structured sports development connecting grassroots passion with discipline.",
-        alt: "Sports training still life"
+        id: "fc-21",
+        src: "/assets/gallery/football-coaching-camp/football-camp-21.jpg",
+        caption: "MLA Manoj Moothedan inaugurating the Football Coaching Camp under the Empower Youth Programme organised by Flexon Sports Foundation.",
+        alt: "MLA Manoj Moothedan addressing youth players at the Football Coaching Camp inauguration",
+        category: "camp-inauguration",
+        categoryLabel: "MLA Inauguration",
+        orientation: "portrait",
+        featured: true
+      },
+      {
+        id: "fc-10",
+        src: "/assets/gallery/football-coaching-camp/football-camp-10.jpg",
+        caption: "MLA Manoj Moothedan preparing for the ceremonial first kick as young footballers in numbered blue training kits cheer from the touchlines.",
+        alt: "MLA Manoj Moothedan at the ceremonial ball kick-off on the training ground",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape",
+        featured: true
+      },
+      {
+        id: "fc-30",
+        src: "/assets/gallery/football-coaching-camp/football-camp-30.jpg",
+        caption: "Young footballers aged 10–15 in official numbered kits seated attentively during the Empower Youth camp orientation session.",
+        alt: "Youth footballers seated in blue numbered jerseys during coaching orientation",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait",
+        featured: true
+      },
+      {
+        id: "fc-18",
+        src: "/assets/gallery/football-coaching-camp/football-camp-18.jpg",
+        caption: "Goalkeeper #1 ready between the cones as community leaders, coaches, and squad members gather under the banyan canopy.",
+        alt: "Young goalkeeper facing ceremonial kick-off at Empower Youth Football Camp",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape",
+        featured: true
+      },
+      {
+        id: "fc-02",
+        src: "/assets/gallery/football-coaching-camp/football-camp-02.jpg",
+        caption: "Ball in flight during the opening pitch drill as trainees applaud their fellow goalkeeper between the blue training cones.",
+        alt: "Opening pitch drill at Football Coaching Camp",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-03",
+        src: "/assets/gallery/football-coaching-camp/football-camp-03.jpg",
+        caption: "Young goalkeeper making a clean catch during the inaugural ground session of the Empower Youth Football Coaching Camp.",
+        alt: "Youth goalkeeper catching the football during ground ceremony",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-04",
+        src: "/assets/gallery/football-coaching-camp/football-camp-04.jpg",
+        caption: "Squad members aged 10–15 lined up in full kit, building team spirit and discipline from day one of the 5-month training period.",
+        alt: "Youth squad lined up on the football ground",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-05",
+        src: "/assets/gallery/football-coaching-camp/football-camp-05.jpg",
+        caption: "Action moment from the opening pitch exercise encouraging reflex sharpness, confidence, and active participation.",
+        alt: "Football in mid-air during opening pitch exercise",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-06",
+        src: "/assets/gallery/football-coaching-camp/football-camp-06.jpg",
+        caption: "Vertical perspective of the training pitch showing the young goalkeeper in stance before the assembled Empower Youth cohort.",
+        alt: "Portrait view of goalkeeper stance at Football Coaching Camp",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-07",
+        src: "/assets/gallery/football-coaching-camp/football-camp-07.jpg",
+        caption: "Coaches, civic guests, and Flexon Sports Foundation representatives encouraging young players on the Perumbavoor ground.",
+        alt: "Guests and coaches applauding young footballers",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-08",
+        src: "/assets/gallery/football-coaching-camp/football-camp-08.jpg",
+        caption: "Developing focus and footwork: goalkeeper positioning drills between the blue markers during the opening session.",
+        alt: "Goalkeeper positioning drill between cones",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-09",
+        src: "/assets/gallery/football-coaching-camp/football-camp-09.jpg",
+        caption: "Two rows of young trainees aged 10–15 cheering on their teammates during the inaugural ground kick-off.",
+        alt: "Two rows of young football trainees applauding on the field",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-11",
+        src: "/assets/gallery/football-coaching-camp/football-camp-11.jpg",
+        caption: "Ceremonial pass rolled across the pitch toward the goal markers, symbolizing the launch of the October 2026 – February 2027 camp.",
+        alt: "Ceremonial pass across the training ground",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-12",
+        src: "/assets/gallery/football-coaching-camp/football-camp-12.jpg",
+        caption: "Shared joy and encouragement as dignitaries and coaches interact with the young football trainees on the field.",
+        alt: "Dignitaries and coaches interacting with youth footballers",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-13",
+        src: "/assets/gallery/football-coaching-camp/football-camp-13.jpg",
+        caption: "Full-field view of the Empower Youth Football Coaching Camp assembly beneath the historic banyan trees.",
+        alt: "Full-field view of Football Coaching Camp assembly",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-14",
+        src: "/assets/gallery/football-coaching-camp/football-camp-14.jpg",
+        caption: "Young athletes demonstrating readiness, agility, and sportsmanship during the opening ground drill.",
+        alt: "Youth athletes during opening ground drill",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-15",
+        src: "/assets/gallery/football-coaching-camp/football-camp-15.jpg",
+        caption: "Applause across the pitch as the ceremonial kick-off concludes and structured group training begins.",
+        alt: "Applause across the pitch at the football coaching camp",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-16",
+        src: "/assets/gallery/football-coaching-camp/football-camp-16.jpg",
+        caption: "Goalkeeper #1 crouched in ready position as MLA Manoj Moothedan and guests look on from the center circle.",
+        alt: "Goalkeeper in ready stance facing the center circle",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-17",
+        src: "/assets/gallery/football-coaching-camp/football-camp-17.jpg",
+        caption: "Close-up of the pitch corridor formed by Empower Youth trainees celebrating community football.",
+        alt: "Pitch corridor formed by youth football trainees",
+        category: "pitch-kickoff",
+        categoryLabel: "Pitch Kick-Off & Drills",
+        orientation: "landscape"
+      },
+      {
+        id: "fc-19",
+        src: "/assets/gallery/football-coaching-camp/football-camp-19.jpg",
+        caption: "MLA Manoj Moothedan addressing children and parents at the inaugural ceremony of the Empower Youth Football Coaching Camp.",
+        alt: "MLA Manoj Moothedan speaking at the Football Coaching Camp inauguration",
+        category: "camp-inauguration",
+        categoryLabel: "MLA Inauguration",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-20",
+        src: "/assets/gallery/football-coaching-camp/football-camp-20.jpg",
+        caption: "Inaugural address highlighting the importance of physical fitness, teamwork, discipline, and confidence for youth aged 10–15.",
+        alt: "Inaugural address by MLA Manoj Moothedan under the Empower Youth banner",
+        category: "camp-inauguration",
+        categoryLabel: "MLA Inauguration",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-22",
+        src: "/assets/gallery/football-coaching-camp/football-camp-22.jpg",
+        caption: "Trainees in numbered blue jerseys listening to the coaching roadmap and schedule for the Oct 2026 – Feb 2027 training season.",
+        alt: "Trainees in blue jerseys listening to the coaching briefing",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-23",
+        src: "/assets/gallery/football-coaching-camp/football-camp-23.jpg",
+        caption: "Camp coaches and coordinators overseeing the player orientation and batch registration session.",
+        alt: "Camp coaches overseeing player orientation",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-24",
+        src: "/assets/gallery/football-coaching-camp/football-camp-24.jpg",
+        caption: "Young footballers seated together in camaraderie before stepping onto the training pitch.",
+        alt: "Young footballers seated together at the camp pavilion",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-25",
+        src: "/assets/gallery/football-coaching-camp/football-camp-25.jpg",
+        caption: "Front-row view of the 10–15 age group cohort wearing their football boots, shin guards, and official camp kits.",
+        alt: "Front-row view of youth footballers in camp kits and boots",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-26",
+        src: "/assets/gallery/football-coaching-camp/football-camp-26.jpg",
+        caption: "Parents, guardians, and local supporters gathered alongside the trainees during the camp opening ceremony.",
+        alt: "Parents and trainees gathered at the football camp opening",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-27",
+        src: "/assets/gallery/football-coaching-camp/football-camp-27.jpg",
+        caption: "Focused young athletes listening to guidance on discipline, regular practice, and sportsmanship.",
+        alt: "Focused young athletes during orientation",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-28",
+        src: "/assets/gallery/football-coaching-camp/football-camp-28.jpg",
+        caption: "Pavilion view of the Empower Youth squad ready for five months of structured grassroots football coaching.",
+        alt: "Pavilion view of the Empower Youth football squad",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-29",
+        src: "/assets/gallery/football-coaching-camp/football-camp-29.jpg",
+        caption: "Coaches and mentors briefing the squad on ball control drills, fitness routines, and safety protocols.",
+        alt: "Coaches briefing the youth football squad",
+        category: "youth-orientation",
+        categoryLabel: "Youth Squad & Orientation",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-31",
+        src: "/assets/gallery/football-coaching-camp/football-camp-31.jpg",
+        caption: "Wide view of the inaugural gathering with MLA Manoj Moothedan, programme coordinators, and the entire youth squad.",
+        alt: "Wide view of the Football Coaching Camp inauguration ceremony",
+        category: "camp-inauguration",
+        categoryLabel: "MLA Inauguration",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-32",
+        src: "/assets/gallery/football-coaching-camp/football-camp-32.jpg",
+        caption: "Community representatives and coaching staff sharing encouraging words with the young players.",
+        alt: "Community representatives and coaching staff at the camp",
+        category: "camp-inauguration",
+        categoryLabel: "MLA Inauguration",
+        orientation: "portrait"
+      },
+      {
+        id: "fc-33",
+        src: "/assets/gallery/football-coaching-camp/football-camp-33.jpg",
+        caption: "Full assembly at the Football Coaching Camp – Empower Youth Programme inauguration organised by Flexon Sports Foundation.",
+        alt: "Full assembly at the Football Coaching Camp Empower Youth Programme",
+        category: "camp-inauguration",
+        categoryLabel: "MLA Inauguration",
+        orientation: "portrait"
       }
     ]
   },
   {
     id: "veteran-cricket",
     title: "Veteran Sixes Cricket Camaraderie",
+    shortTitle: "Veteran Sixes Cricket",
     subtitle: "Lifelong sport & team spirit for experienced players",
-    date: "Evergreen",
-    city: "Kerala / Regional",
+    date: "2026 Season",
+    isoDate: "2026-09-15",
+    year: "2026",
+    city: "Kerala",
+    venue: "Regional Turf Grounds",
+    sport: "cricket",
+    sportLabel: "Cricket",
+    sportIcon: "🏏",
     initiative: "Veteran Sixes",
+    sdg: "SDG 3: Good Health",
+    featured: false,
+    folder: "/assets/animated",
     cover: "/assets/animated/cricket-animated.jpg",
     count: 2,
+    categories: [
+      { id: "all", label: "All Moments", icon: "📸" },
+      { id: "cricket", label: "Veteran Cricket", icon: "🏏" }
+    ],
     items: [
       {
         id: "cr-1",
         src: "/assets/animated/cricket-animated.jpg",
         caption: "Veteran Sixes cricket celebrating sportsmanship and the joy of the game.",
-        alt: "Cricket bats, ball, and wickets celebration"
+        alt: "Cricket bats, ball, and wickets celebration",
+        category: "cricket",
+        categoryLabel: "Veteran Cricket",
+        orientation: "landscape"
       },
       {
         id: "cr-2",
         src: "/assets/animated/support-donate-animated.jpg",
         caption: "Community sports fostering lasting health and friendships.",
-        alt: "Community sports and support"
+        alt: "Community sports and support",
+        category: "cricket",
+        categoryLabel: "Veteran Cricket",
+        orientation: "landscape"
       }
     ]
   }
@@ -736,15 +1440,17 @@ The foundation is currently working with civic and venue partners to finalize th
   {
     id: "empower-youth-football-underway",
     slug: "empower-youth-football-coaching-underway",
-    title: "Empower Youth Football Coaching Camp Commences in Kerala",
+    title: "Football Coaching Camp – Empower Youth Programme Inaugurated by MLA Manoj Moothedan",
     date: "12 October 2026",
     category: "Programme Update",
     initiative: "Empower Youth",
     author: "Grassroots Development Desk",
-    image: "/assets/animated/football-camp-animated.jpg",
-    summary: "Structured football coaching for children aged 10–15 is now underway under the Empower Youth initiative led by MLA Manoj Moothedan.",
-    content: `The Empower Youth football coaching camp, organized by Flexon Sports Foundation under the leadership of MLA Manoj Moothedan, is currently delivering training sessions for young players aged 10–15.
+    image: "/assets/gallery/football-coaching-camp/football-camp-01.jpg",
+    summary: "Organised by Flexon Sports Foundation and inaugurated by MLA Manoj Moothedan, the Football Coaching Camp provides structured training for children aged 10–15 from 3 October 2026 to 27 February 2027.",
+    content: `The Football Coaching Camp is an initiative of Flexon Sports Foundation under its Empower Youth Programme, inaugurated by MLA Manoj Moothedan.
 
-Running from 3 October 2026 through 27 February 2027, the camp provides structured coaching covering ball mastery, spatial awareness, passing drills, and fair play values. Parents and guardians interested in learning about session schedules and enrolment availability can submit an enquiry through the foundation's official portal.`
+Running from 3 October 2026 to 27 February 2027, the camp provides structured football training for children aged 10–15, focusing on football skills, physical fitness, teamwork, discipline and confidence.
+
+The programme aims to encourage young talent and promote sports participation among children. Parents and guardians interested in learning about session schedules and enrolment availability can submit an enquiry through the foundation's official portal.`
   }
 ];

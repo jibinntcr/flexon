@@ -79,8 +79,8 @@ export function renderHyderabad2026Page() {
         <div class="split-feature-grid">
           <div class="split-feature-media">
             <img 
-              src="/assets/animated/flexathon-hyderabad-animated.jpg" 
-              alt="Runners at Hyderabad Community Marathon with Charminar landmark" 
+              src="/assets/gallery/flexathon-hyderabad/flexathon-hyd-14.jpg" 
+              alt="Official flag-off at the FLEXATHON Hyderabad 2026 starting arch at ESCI Campus" 
               class="feature-img shadow-sm"
             />
           </div>
@@ -118,22 +118,39 @@ export function renderHyderabad2026Page() {
     <section class="section section-hyd-gallery bg-surface" id="event-gallery">
       <div class="container">
         <div class="section-header text-center max-w-reading">
-          <span class="section-eyebrow">EVENT ALBUM</span>
+          <span class="section-eyebrow">OFFICIAL EVENT ALBUM • ${hydAlbum.items.length} PHOTOGRAPHS</span>
           <h2 class="section-title">Hyderabad 2026 Visual Archive</h2>
           <p class="section-desc">
-            Click any photograph to view in high resolution with documentary captions and photographer notes.
+            Filter by race-day moment or click any photograph to inspect in full-screen high resolution with filmstrip navigation.
           </p>
         </div>
 
-        <div class="gallery-grid mt-4">
-          ${hydAlbum.items.map((item, idx) => `
-            <div class="gallery-item-card" data-idx="${idx}">
-              <img src="${item.src}" alt="${item.alt}" class="gallery-card-img" />
-              <div class="gallery-item-caption">
-                <span>${item.caption}</span>
-              </div>
-            </div>
-          `).join("")}
+        <div class="gallery-subfilters-bar justify-center mt-3 mb-4" id="hyd-page-subfilters">
+          <div class="subfilter-chips">
+            <button type="button" class="moment-chip is-active" data-moment="all">
+              📸 All Photos (${hydAlbum.items.length})
+            </button>
+            <button type="button" class="moment-chip" data-moment="flag-off">
+              🏁 Flag-Off & Start Line
+            </button>
+            <button type="button" class="moment-chip" data-moment="community-waves">
+              🏃 5K & 3K Waves
+            </button>
+            <button type="button" class="moment-chip" data-moment="warm-up">
+              🔥 Warm-Up & Assembly
+            </button>
+            <button type="button" class="moment-chip" data-moment="podium-awards">
+              🏆 Podium & Awards
+            </button>
+          </div>
+        </div>
+
+        <div class="gallery-modern-grid view-editorial mt-4" id="hyd-archive-grid"></div>
+
+        <div class="text-center mt-4">
+          <a href="/gallery" class="btn btn-outline">
+            Open Full Foundation Media Gallery →
+          </a>
         </div>
       </div>
     </section>
@@ -182,14 +199,73 @@ export function renderHyderabad2026Page() {
     </section>
   `;
 
-  // Attach Lightbox triggers
-  const galleryCards = container.querySelectorAll(".gallery-item-card");
-  galleryCards.forEach(card => {
-    card.addEventListener("click", () => {
-      const idx = parseInt(card.getAttribute("data-idx") || "0", 10);
-      globalLightbox.open(hydAlbum.items, idx);
+  // Render filterable Hyderabad gallery grid & bind Lightbox triggers
+  const hydGrid = container.querySelector("#hyd-archive-grid");
+  let activeMoment = "all";
+
+  function renderHydGrid() {
+    if (!hydGrid) return;
+    const filtered = hydAlbum.items.filter(
+      (item) => activeMoment === "all" || item.category === activeMoment
+    );
+
+    hydGrid.innerHTML = filtered
+      .map((item, idx) => {
+        const numStr = String(idx + 1).padStart(2, "0");
+        const orientClass = item.orientation === "portrait" ? "is-portrait" : "is-landscape";
+        const isWide = item.featured && item.orientation !== "portrait" && idx % 7 === 0;
+        return `
+          <figure
+            class="gallery-modern-card ${orientClass} ${isWide ? "is-featured-span" : ""}"
+            data-idx="${idx}"
+            tabindex="0"
+            role="button"
+            aria-label="Inspect photo ${numStr}: ${item.caption}"
+          >
+            <div class="gallery-modern-img-wrap">
+              <img src="${item.src}" alt="${item.alt}" class="gallery-modern-img" loading="lazy" />
+              <div class="gallery-card-top-badges">
+                <span class="gallery-idx-pill">#${numStr}</span>
+                ${item.categoryLabel ? `<span class="gallery-cat-tag">${item.categoryLabel}</span>` : ""}
+              </div>
+              <div class="gallery-card-hover-veil">
+                <span class="gallery-inspect-btn">⤢ Inspect HD</span>
+              </div>
+            </div>
+            <figcaption class="gallery-modern-caption">
+              <p class="gallery-caption-text">${item.caption}</p>
+            </figcaption>
+          </figure>
+        `;
+      })
+      .join("");
+
+    hydGrid.querySelectorAll(".gallery-modern-card").forEach((card) => {
+      const openCard = () => {
+        const idx = parseInt(card.getAttribute("data-idx") || "0", 10);
+        globalLightbox.open(filtered, idx);
+      };
+      card.addEventListener("click", openCard);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openCard();
+        }
+      });
+    });
+  }
+
+  container.querySelectorAll("#hyd-page-subfilters .moment-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      activeMoment = chip.getAttribute("data-moment") || "all";
+      container.querySelectorAll("#hyd-page-subfilters .moment-chip").forEach((c) => {
+        c.classList.toggle("is-active", c.getAttribute("data-moment") === activeMoment);
+      });
+      renderHydGrid();
     });
   });
+
+  renderHydGrid();
 
   return container;
 }

@@ -74,10 +74,10 @@ export function createFooter() {
         <div class="footer-col brand-col">
           <a href="/" class="footer-brand-link" aria-label="Flexon Sports Foundation Home">
             <img 
-              src="/assets/brand/flexon-sports-logo-light.png" 
+              src="/assets/brand/flexon-sports-foundation-logo.png" 
               alt="Flexon Sports Foundation Logo" 
               class="footer-brand-logo"
-              onerror="this.onerror=null; this.src='/assets/brand/flexon-sports-logo.png';"
+              onerror="this.onerror=null; this.src='/assets/brand/flexon-sports-foundation-logo.jpeg';"
             />
           </a>
           <p class="footer-bio">

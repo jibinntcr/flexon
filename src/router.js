@@ -84,8 +84,16 @@ export class Router {
       const href = link.getAttribute("href");
       if (!href) return;
 
-      // Ignore external, mailto, tel, or fragment-only links
-      if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("#") || link.target === "_blank") {
+      // Ignore external, mailto, tel, download, or fragment-only links
+      if (
+        href.startsWith("http") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        href.startsWith("#") ||
+        link.target === "_blank" ||
+        link.hasAttribute("download") ||
+        link.hasAttribute("data-no-router")
+      ) {
         return;
       }
 
@@ -116,6 +124,14 @@ export class Router {
     }
 
     const renderAction = () => {
+      // Ensure body scroll lock is cleared on route change
+      document.body.style.overflow = "";
+      const openLightbox = document.getElementById("global-lightbox");
+      if (openLightbox) {
+        openLightbox.classList.remove("is-open", "open");
+        openLightbox.setAttribute("aria-hidden", "true");
+      }
+
       this.appMount.innerHTML = "";
       if (matched) {
         document.title = matched.title;

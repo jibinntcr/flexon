@@ -24,6 +24,16 @@ export function renderHomePage() {
   const container = document.createElement("div");
   container.className = "page-home";
 
+  const hydAlbum = galleryAlbums.find((a) => a.id === "hyderabad-2026") || galleryAlbums[0];
+  const campAlbum = galleryAlbums.find((a) => a.id === "football-training") || galleryAlbums[1];
+  const totalArchiveCount = galleryAlbums.reduce((sum, a) => sum + a.items.length, 0);
+
+  // Curated 6-photo mix: 3 best from FLEXATHON Hyderabad + 3 best from Football Coaching Camp
+  const homeShowcaseItems = [
+    ...(hydAlbum ? hydAlbum.items.filter((i) => i.orientation === "landscape").slice(0, 3) : []),
+    ...(campAlbum ? campAlbum.items.filter((i) => i.orientation === "landscape").slice(0, 3) : [])
+  ];
+
   container.innerHTML = `
     <!-- 1. Hero Section -->
     <section class="hero-section" id="hero" aria-label="Hero Section">
@@ -210,10 +220,11 @@ export function renderHomePage() {
           <div class="editorial-media">
             <div class="flagship-image-wrapper">
               <img 
-                src="/assets/animated/flexathon-hyderabad-animated.jpg" 
-                alt="FLEXATHON Hyderabad 2026 runners crossing the start line" 
+                src="/assets/hero/flexathon-hyd-hero-1.jpg" 
+                alt="FLEXATHON Hyderabad 2026 official flag-off at ESCI Campus" 
                 class="flagship-img"
                 loading="lazy"
+                decoding="async"
               />
               <div class="flagship-img-overlay">
                 <span class="flagship-pill-badge">Hyderabad Edition • 18 Oct 2026</span>
@@ -301,26 +312,27 @@ export function renderHomePage() {
           <div class="pillar-card card-hover-lift">
             <div class="pillar-img-wrap">
               <img 
-                src="/assets/animated/football-camp-animated.jpg" 
-                alt="Youth football coaching with balls and cones" 
+                src="/assets/hero/football-camp-hero-1.jpg" 
+                alt="Football Coaching Camp – Empower Youth Programme inaugurated by MLA Manoj Moothedan" 
                 class="pillar-img"
                 loading="lazy"
+                decoding="async"
               />
-              <span class="pillar-floating-tag tag-green">Grassroots Football</span>
+              <span class="pillar-floating-tag tag-green">Empower Youth Programme</span>
             </div>
             <div class="pillar-body">
-              <span class="pillar-badge">Ages 10–15 • Kerala • Oct 2026 – Feb 2027</span>
-              <h3 class="pillar-title">Build Skills for the Game. Develop Habits for Life.</h3>
+              <span class="pillar-badge">Ages 10–15 • 3 Oct 2026 to 27 Feb 2027 • Inaugurated by MLA Manoj Moothedan</span>
+              <h3 class="pillar-title">Football Coaching Camp – Empower Youth Programme</h3>
               <p class="pillar-desc">
-                Organised under the Empower Youth programme led by MLA Manoj Moothedan. Structured coaching focusing on ball control, passing precision, teamwork, and healthy practice routines.
+                An initiative of Flexon Sports Foundation under its Empower Youth Programme. Provides structured football training for children aged 10–15, focusing on football skills, physical fitness, teamwork, discipline and confidence.
               </p>
               <div class="pillar-meta">
-                <span class="meta-tag">⚽ Ball Mastery</span>
-                <span class="meta-tag">🤝 Team Discipline</span>
-                <span class="meta-tag">🏃 Physical Agility</span>
+                <span class="meta-tag">⚽ Football Skills</span>
+                <span class="meta-tag">💪 Physical Fitness</span>
+                <span class="meta-tag">🤝 Teamwork & Confidence</span>
               </div>
               <div class="pillar-footer">
-                <a href="/programs/empower-youth-football-camp" class="btn btn-outline btn-sm">Camp Information & Schedule →</a>
+                <a href="/programs/empower-youth-football-camp" class="btn btn-outline btn-sm">Camp Details & 33 Photos →</a>
               </div>
             </div>
           </div>
@@ -417,14 +429,14 @@ export function renderHomePage() {
       <div class="container">
         <div class="section-header-row">
           <div>
-            <span class="text-eyebrow">DOCUMENTARY ARCHIVE</span>
+            <span class="text-eyebrow">DOCUMENTARY ARCHIVE • FLEXATHON HYDERABAD & EMPOWER YOUTH FOOTBALL CAMP</span>
             <h2 id="gallery-heading" class="heading-section">The Effort. The People. The Moments.</h2>
           </div>
-          <a href="/gallery" class="btn btn-outline btn-sm">View Full Gallery Archive →</a>
+          <a href="/gallery" class="btn btn-outline btn-sm">Explore All ${totalArchiveCount} Event Photos →</a>
         </div>
 
         <div class="gallery-showcase-grid">
-          ${galleryAlbums[0].items.slice(0, 3).map((item, idx) => `
+          ${homeShowcaseItems.map((item, idx) => `
             <div class="gallery-showcase-card" data-index="${idx}" tabindex="0" role="button" aria-label="Open photo: ${item.caption}">
               <div class="gallery-showcase-img-wrap">
                 <img 
@@ -432,8 +444,10 @@ export function renderHomePage() {
                   alt="${item.alt}" 
                   class="gallery-showcase-img"
                   loading="lazy"
+                  decoding="async"
                 />
-                <div class="gallery-zoom-icon" aria-hidden="true">🔍</div>
+                ${item.categoryLabel ? `<span class="gallery-showcase-tag">${item.categoryLabel}</span>` : ""}
+                <div class="gallery-zoom-icon" aria-hidden="true">⤢</div>
               </div>
               <div class="gallery-showcase-caption">
                 <span class="caption-text">${item.caption}</span>
@@ -538,7 +552,7 @@ export function renderHomePage() {
   galleryItems.forEach(item => {
     const trigger = () => {
       const idx = parseInt(item.getAttribute("data-index") || "0", 10);
-      globalLightbox.open(galleryAlbums[0].items, idx);
+      globalLightbox.open(homeShowcaseItems, idx);
     };
     item.addEventListener("click", trigger);
     item.addEventListener("keydown", (e) => {

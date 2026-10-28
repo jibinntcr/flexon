@@ -12,10 +12,10 @@ export function createHeader() {
     <div class="container header-inner">
       <a href="/" class="brand-link" aria-label="Flexon Sports Foundation Home">
         <img 
-          src="/assets/brand/flexon-sports-logo-light.png" 
+          src="/assets/brand/flexon-sports-foundation-logo.png" 
           alt="Flexon Sports Foundation" 
           class="brand-logo-img"
-          onerror="this.onerror=null; this.src='/assets/brand/flexon-sports-logo.png';"
+          onerror="this.onerror=null; this.src='/assets/brand/flexon-sports-foundation-logo.jpeg';"
         />
       </a>
 
@@ -128,7 +128,15 @@ export function createHeader() {
     <!-- Mobile Drawer Navigation -->
     <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
       <div class="drawer-header">
-        <span class="drawer-title font-weight-bold">Navigation</span>
+        <a href="/" class="brand-link" aria-label="Flexon Sports Foundation Home">
+          <img
+            src="/assets/brand/flexon-sports-foundation-logo.png"
+            alt="Flexon Sports Foundation"
+            class="brand-logo-img"
+            style="height: 36px;"
+            onerror="this.onerror=null; this.src='/assets/brand/flexon-sports-foundation-logo.jpeg';"
+          />
+        </a>
         <button class="btn btn-ghost btn-sm" id="drawer-close" aria-label="Close menu">&times;</button>
       </div>
       <div class="drawer-body mt-3">
