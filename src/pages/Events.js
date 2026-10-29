@@ -46,23 +46,23 @@ export function renderEventsPage() {
           </a>
         </div>
 
-        <!-- Metric Ribbon -->
-        <div class="page-metrics-ribbon">
+        <!-- Sporting Focus Pillars Ribbon -->
+        <div class="page-metrics-ribbon events-pillars-ribbon">
           <div class="page-metric-item">
-            <span class="page-metric-val">3</span>
-            <span class="page-metric-label">Key Event Formats</span>
+            <span class="page-metric-val">COMMUNITY RUNS</span>
+            <span class="page-metric-label">Fitness, endurance and participation</span>
           </div>
           <div class="page-metric-item">
-            <span class="page-metric-val">Verified</span>
-            <span class="page-metric-label">Safety & Route Standards</span>
+            <span class="page-metric-val">YOUTH FOOTBALL</span>
+            <span class="page-metric-label">Training, teamwork and development</span>
           </div>
           <div class="page-metric-item">
-            <span class="page-metric-val">₹60,000</span>
-            <span class="page-metric-label">Run Prize Awards</span>
+            <span class="page-metric-val">VETERAN SPORTS</span>
+            <span class="page-metric-label">Competition, camaraderie and active living</span>
           </div>
           <div class="page-metric-item">
-            <span class="page-metric-val">Multi-Gen</span>
-            <span class="page-metric-label">Youth to Veteran Sports</span>
+            <span class="page-metric-val">SPORTS FOR ALL</span>
+            <span class="page-metric-label">Inclusive opportunities across communities</span>
           </div>
         </div>
       </div>

@@ -90,27 +90,70 @@ export function renderHomePage() {
         </div>
       </div>
 
-      <!-- Athletic Impact Metrics Bar -->
+      <!-- Our Purpose Through Sport Card -->
       <div class="container">
-        <div class="hero-stats-bar">
-          <div class="stat-item">
-            <span class="stat-number">17</span>
-            <span class="stat-label">Global Goals Aligned</span>
+        <div class="hero-purpose-card" role="region" aria-labelledby="hero-purpose-heading">
+          <div class="hero-purpose-header">
+            <div class="hero-purpose-kicker" aria-hidden="true">
+              <span class="kicker-line"></span>
+              <span class="kicker-tag">CORE FOUNDATION PILLARS</span>
+              <span class="kicker-line"></span>
+            </div>
+            <h2 id="hero-purpose-heading" class="hero-purpose-heading">
+              Our Purpose Through <span class="text-gradient-red">Sport</span>
+            </h2>
           </div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat-item">
-            <span class="stat-number">12</span>
-            <span class="stat-label">Retained Sports Programs</span>
-          </div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat-item">
-            <span class="stat-number">₹60K</span>
-            <span class="stat-label">Run Prize Pool Advertised</span>
-          </div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Section 8 Non-Profit</span>
+
+          <div class="hero-purpose-grid">
+            <div class="hero-purpose-item">
+              <div class="hero-purpose-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+                  <path d="M7 12h2l1.5 -2.5l2 5l1.5 -2.5h3" />
+                </svg>
+              </div>
+              <h3 class="hero-purpose-title">ACTIVE LIVING</h3>
+              <p class="hero-purpose-desc">Promoting physical fitness, health and well-being</p>
+            </div>
+
+            <div class="hero-purpose-item">
+              <div class="hero-purpose-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                  <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                </svg>
+              </div>
+              <h3 class="hero-purpose-title">YOUTH EMPOWERMENT</h3>
+              <p class="hero-purpose-desc">Developing skills, confidence and opportunities through sport</p>
+            </div>
+
+            <div class="hero-purpose-item">
+              <div class="hero-purpose-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="7" r="3" />
+                  <path d="M3 19v-1.5a4.5 4.5 0 0 1 4.5 -4.5h3a4.5 4.5 0 0 1 4.5 4.5v1.5" />
+                  <circle cx="16.5" cy="8.5" r="2.5" />
+                  <path d="M17.5 13.5a4 4 0 0 1 3.5 4v1.5" />
+                </svg>
+              </div>
+              <h3 class="hero-purpose-title">COMMUNITY INCLUSION</h3>
+              <p class="hero-purpose-desc">Bringing people together across ages and backgrounds</p>
+            </div>
+
+            <div class="hero-purpose-item">
+              <div class="hero-purpose-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
+                  <path d="M7 4h10" />
+                  <path d="M17 4v8a5 5 0 0 1 -10 0v-8" />
+                  <path d="M7 6h-3v2a3 3 0 0 0 3 3" />
+                  <path d="M17 6h3v2a3 3 0 0 1 -3 3" />
+                </svg>
+              </div>
+              <h3 class="hero-purpose-title">SPORTING EXCELLENCE</h3>
+              <p class="hero-purpose-desc">Creating pathways for talent, participation and achievement</p>
+            </div>
           </div>
         </div>
       </div>
@@ -341,10 +384,11 @@ export function renderHomePage() {
           <div class="pillar-card card-hover-lift">
             <div class="pillar-img-wrap">
               <img 
-                src="/assets/animated/cricket-animated.jpg" 
-                alt="Veteran cricket teammates celebrating camaraderie" 
+                src="/assets/hero/veteran-cricket.jpg" 
+                alt="Veteran cricket teammates celebrating camaraderie on the field" 
                 class="pillar-img"
                 loading="lazy"
+                decoding="async"
               />
               <span class="pillar-floating-tag tag-gold">Evergreen Sport</span>
             </div>
@@ -506,7 +550,10 @@ export function renderHomePage() {
       <div class="container">
         <div class="support-banner-card">
           <div class="support-banner-content">
-            <span class="support-eyebrow">SECTION 8 NOT-FOR-PROFIT FOUNDATION</span>
+            <span class="support-eyebrow">
+              <span class="support-eyebrow-dot"></span>
+              SECTION 8 NOT-FOR-PROFIT FOUNDATION
+            </span>
             <h2 id="support-heading" class="support-title">
               Help Create More Opportunities Through Sport.
             </h2>
@@ -523,18 +570,32 @@ export function renderHomePage() {
               </a>
             </div>
             <div class="support-trust-row">
-              <span class="trust-badge">✓ Licensed under Companies Act, 2013</span>
-              <span class="trust-badge">✓ Transparent Statutory Disclosures</span>
-              <span class="trust-badge">✓ Zero Private Benefit</span>
+              <span class="trust-badge"><span class="trust-check">✓</span> Licensed under Companies Act, 2013</span>
+              <span class="trust-badge"><span class="trust-check">✓</span> Transparent Statutory Disclosures</span>
+              <span class="trust-badge"><span class="trust-check">✓</span> Zero Private Benefit</span>
             </div>
           </div>
           <div class="support-banner-visual">
-            <img 
-              src="/assets/animated/support-donate-animated.jpg" 
-              alt="Community sports participants celebrating with trophy and equipment" 
-              class="support-visual-img"
-              loading="lazy"
-            />
+            <div class="support-visual-frame">
+              <img 
+                src="/assets/hero/support-impact-real.jpg" 
+                alt="FLEXATHON Hyderabad 2026 podium winner receiving official award plaque and prize cheque from Flexon Sports Foundation dignitaries" 
+                class="support-visual-img"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="support-visual-overlay"></div>
+              <div class="support-visual-badge-top">
+                <span class="support-badge-dot"></span>
+                <span>100% Direct Grassroots Impact</span>
+              </div>
+              <div class="support-visual-caption">
+                <div class="support-caption-text">
+                  <strong>FLEXATHON Hyderabad & Empower Youth Camp</strong>
+                  <span>Verified athlete awards, youth coaching kits & inclusive community access</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

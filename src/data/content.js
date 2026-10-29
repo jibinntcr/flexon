@@ -105,7 +105,7 @@ export const programs = [
     actionLink: "/flexathon",
     badge: "Flagship Initiative",
     category: "Running",
-    image: "/assets/animated/flexathon-runners-animated.jpg"
+    image: "/assets/hero/flexathon-hyd-hero-1.jpg"
   },
   {
     id: "empower-youth-football",
@@ -129,7 +129,7 @@ export const programs = [
     actionLink: "/veteran-sixes",
     badge: "Evergreen Initiative",
     category: "Cricket",
-    image: "/assets/animated/cricket-animated.jpg"
+    image: "/assets/hero/veteran-cricket.jpg"
   },
   {
     id: "football-tournaments",
@@ -140,7 +140,7 @@ export const programs = [
     actionText: "Enquire About Football",
     actionLink: "/contact?interest=football-tournaments",
     category: "Football",
-    image: "/assets/animated/football-camp-animated.jpg"
+    image: "/assets/hero/football-camp-hero-1.jpg"
   },
   {
     id: "cricket-tournaments",
@@ -151,7 +151,7 @@ export const programs = [
     actionText: "Enquire About Cricket",
     actionLink: "/contact?interest=cricket-tournaments",
     category: "Cricket",
-    image: "/assets/animated/cricket-animated.jpg"
+    image: "/assets/hero/veteran-cricket.jpg"
   },
   {
     id: "school-college-meets",
@@ -162,7 +162,7 @@ export const programs = [
     actionText: "Connect Your Institution",
     actionLink: "/partnerships?type=school",
     category: "Education",
-    image: "/assets/animated/hero-sports-animated.jpg"
+    image: "/assets/gallery/football-coaching-camp/football-camp-14.jpg"
   },
   {
     id: "community-sports",
@@ -173,7 +173,7 @@ export const programs = [
     actionText: "Discuss a Community Event",
     actionLink: "/partnerships?type=community",
     category: "Community",
-    image: "/assets/animated/support-donate-animated.jpg"
+    image: "/assets/hero/support-impact-real.jpg"
   },
   {
     id: "fitness-challenges",
@@ -184,7 +184,7 @@ export const programs = [
     actionText: "Discuss a Fitness Activity",
     actionLink: "/contact?interest=fitness-challenges",
     category: "Fitness",
-    image: "/assets/animated/flexathon-runners-animated.jpg"
+    image: "/assets/hero/flexathon-hyd-hero-2.jpg"
   },
   {
     id: "special-campaigns",
@@ -195,7 +195,7 @@ export const programs = [
     actionText: "Propose a Campaign",
     actionLink: "/partnerships?type=campaign",
     category: "Advocacy",
-    image: "/assets/animated/support-donate-animated.jpg"
+    image: "/assets/hero/support-impact-real.jpg"
   },
   {
     id: "basketball-events",
@@ -206,7 +206,7 @@ export const programs = [
     actionText: "Enquire About Basketball",
     actionLink: "/contact?interest=basketball",
     category: "Basketball",
-    image: "/assets/animated/hero-sports-animated.jpg"
+    image: "/assets/gallery/flexathon-hyderabad/flexathon-hyd-18.jpg"
   },
   {
     id: "netball-events",
@@ -217,7 +217,7 @@ export const programs = [
     actionText: "Enquire About Netball",
     actionLink: "/contact?interest=netball",
     category: "Netball",
-    image: "/assets/animated/hero-sports-animated.jpg"
+    image: "/assets/gallery/football-coaching-camp/football-camp-23.jpg"
   },
   {
     id: "sports-education",
@@ -228,7 +228,7 @@ export const programs = [
     actionText: "Discuss Sports Education",
     actionLink: "/partnerships?type=education",
     category: "Education",
-    image: "/assets/animated/hero-sports-animated.jpg"
+    image: "/assets/gallery/football-coaching-camp/football-camp-22.jpg"
   }
 ];
 
@@ -494,7 +494,7 @@ export const events = [
     themeGoal: 3,
     themeTitle: "Good Health & Well-being",
     summary: "A celebration of seasoned cricket players, lifelong camaraderie, and sporting longevity. Enquire to register team interest or propose hosting an edition.",
-    image: "/assets/animated/cricket-animated.jpg",
+    image: "/assets/hero/veteran-cricket.jpg",
     actionText: "Ask About Next Edition",
     actionLink: "/veteran-sixes"
   }
@@ -1373,9 +1373,9 @@ export const galleryAlbums = [
     initiative: "Veteran Sixes",
     sdg: "SDG 3: Good Health",
     featured: false,
-    folder: "/assets/animated",
-    cover: "/assets/animated/cricket-animated.jpg",
-    count: 2,
+    folder: "/assets/hero",
+    cover: "/assets/hero/veteran-cricket.jpg",
+    count: 1,
     categories: [
       { id: "all", label: "All Moments", icon: "📸" },
       { id: "cricket", label: "Veteran Cricket", icon: "🏏" }
@@ -1383,18 +1383,9 @@ export const galleryAlbums = [
     items: [
       {
         id: "cr-1",
-        src: "/assets/animated/cricket-animated.jpg",
-        caption: "Veteran Sixes cricket celebrating sportsmanship and the joy of the game.",
-        alt: "Cricket bats, ball, and wickets celebration",
-        category: "cricket",
-        categoryLabel: "Veteran Cricket",
-        orientation: "landscape"
-      },
-      {
-        id: "cr-2",
-        src: "/assets/animated/support-donate-animated.jpg",
-        caption: "Community sports fostering lasting health and friendships.",
-        alt: "Community sports and support",
+        src: "/assets/hero/veteran-cricket.jpg",
+        caption: "Veteran Sixes cricket celebrating sportsmanship and lifelong camaraderie on the field.",
+        alt: "Veteran cricket players celebrating on the pitch",
         category: "cricket",
         categoryLabel: "Veteran Cricket",
         orientation: "landscape"
@@ -1415,7 +1406,7 @@ export const stories = [
     category: "Event Report",
     initiative: "FLEXATHON",
     author: "Flexon Editorial Team",
-    image: "/assets/animated/flexathon-hyderabad-animated.jpg",
+    image: "/assets/hero/flexathon-hyd-hero-1.jpg",
     summary: "On 18 October 2026, the inaugural edition of FLEXATHON brought runners to ESCI Campus in Hyderabad, spotlighting SDG 4: Quality Education.",
     content: `On Sunday, 18 October 2026, the first edition of FLEXATHON took place at the Engineering Staff College of India (ESCI) Campus in Gachibowli, Hyderabad. Organised by Flexon Sports Foundation, the run gathered athletes, students, and community participants across 3K, 5K, and 10K categories.
 

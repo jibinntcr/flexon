@@ -74,9 +74,11 @@ export function renderVeteranSixesPage() {
         <div class="split-feature-grid">
           <div class="split-feature-media">
             <img 
-              src="/assets/animated/cricket-animated.jpg" 
-              alt="Veteran Sixes cricket teammates celebrating sportsmanship" 
+              src="/assets/hero/veteran-cricket.jpg" 
+              alt="Veteran Sixes cricket teammates celebrating sportsmanship on the field" 
               class="feature-img shadow-sm"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="split-feature-content">

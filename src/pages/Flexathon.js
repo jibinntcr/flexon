@@ -72,9 +72,11 @@ export function renderFlexathonPage() {
         <div class="split-feature-grid">
           <div class="split-feature-media">
             <img 
-              src="/assets/animated/flexathon-runners-animated.jpg" 
-              alt="FLEXATHON marathon runners crossing the finish ribbon" 
+              src="/assets/hero/flexathon-hyd-hero-1.jpg" 
+              alt="Official flag-off at FLEXATHON Hyderabad 2026 at ESCI Campus, Gachibowli" 
               class="feature-img shadow-sm"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="split-feature-content">

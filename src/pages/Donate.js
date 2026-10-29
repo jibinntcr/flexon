@@ -62,9 +62,11 @@ export function renderDonatePage() {
         <div class="split-feature-grid">
           <div class="split-feature-media">
             <img 
-              src="/assets/animated/support-donate-animated.jpg" 
-              alt="Community sports participants celebrating with trophy and equipment" 
+              src="/assets/hero/support-impact-real.jpg" 
+              alt="FLEXATHON Hyderabad 2026 podium winner receiving official award plaque and prize cheque from Flexon Sports Foundation dignitaries" 
               class="feature-img shadow-sm"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="split-feature-content">
