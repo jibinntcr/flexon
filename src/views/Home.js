@@ -605,7 +605,8 @@ export function renderHomePage() {
   // Mount 3D Hero scene
   const heroMount = container.querySelector("#hero-3d-mount");
   if (heroMount) {
-    createHero3D(heroMount);
+    const heroInstance = createHero3D(heroMount);
+    container._cleanup = () => heroInstance?.destroy?.();
   }
 
   // Lightbox preview triggers

@@ -156,7 +156,9 @@ export function getAllGalleryAlbums() {
 /**
  * Optional async fetch from a backend API endpoint if configured on window.FLEXON_GALLERY_API_URL
  */
-export async function fetchBackendGalleryAlbums(apiUrl = window.FLEXON_GALLERY_API_URL) {
+export async function fetchBackendGalleryAlbums(
+  apiUrl = typeof window !== "undefined" ? window.FLEXON_GALLERY_API_URL : undefined
+) {
   if (!apiUrl) return getAllGalleryAlbums();
   try {
     const res = await fetch(apiUrl, { headers: { Accept: "application/json" } });

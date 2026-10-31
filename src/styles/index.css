@@ -7611,3 +7611,179 @@ h1, h2, h3, h4, .display-font {
   }
 }
 
+
+/* ==========================================================================
+   GLOBAL MOBILE & VIEWPORT RESPONSIVENESS HARDENING
+   Ensures zero horizontal overflow from 320px through 1440px+ across all pages
+   ========================================================================== */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Prevent off-screen closed mobile drawer from expanding document scrollWidth */
+.mobile-drawer:not(.open) {
+  visibility: hidden;
+  pointer-events: none;
+  width: 0;
+  max-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-left-width: 0;
+  overflow: hidden;
+}
+
+.mobile-drawer.open {
+  visibility: visible;
+  pointer-events: auto;
+  width: min(86vw, 360px);
+  max-width: calc(100vw - 16px);
+}
+
+/* Ensure all grid & split layout children can shrink below intrinsic content width */
+.hero-grid > *,
+.editorial-split-grid > *,
+.dual-pillar-grid > *,
+.split-feature-grid > *,
+.sdg-split-layout > *,
+.contact-split-grid > *,
+.initiatives-bar-grid > *,
+.objectives-grid > *,
+.values-grid > *,
+.workflow-steps > *,
+.programs-grid > *,
+.events-grid > *,
+.paths-grid > *,
+.feature-pillars-grid > *,
+.team-profiles-grid > *,
+.delivery-grid > *,
+.gallery-showcase-grid > *,
+.gallery-modern-grid > *,
+.sdgs-full-grid > *,
+.partners-grid > *,
+.specs-grid > *,
+.footer-grid > *,
+.statutory-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Statutory tables & long strings (emails, URLs, folder paths) */
+.statutory-table-wrap,
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.statutory-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.statutory-table th,
+.statutory-table td,
+.channel-val,
+.album-folder-path,
+.delivery-contact {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Collapse multi-column auto-fill/auto-fit grids cleanly to 1 column on mobile */
+  .initiatives-bar-grid,
+  .objectives-grid,
+  .values-grid,
+  .workflow-steps,
+  .programs-grid,
+  .events-grid,
+  .paths-grid,
+  .feature-pillars-grid,
+  .team-profiles-grid,
+  .delivery-grid,
+  .gallery-showcase-grid,
+  .gallery-modern-grid,
+  .gallery-modern-grid.view-editorial,
+  .gallery-modern-grid.view-Editorial,
+  .gallery-modern-grid.view-compact,
+  .sdgs-full-grid,
+  .partners-grid,
+  .specs-grid,
+  .editorial-split-grid,
+  .dual-pillar-grid,
+  .split-feature-grid,
+  .contact-split-grid,
+  .sdg-split-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Allow long CTA buttons (e.g. UN Goal external links) to wrap cleanly on mobile */
+  .btn,
+  .btn-lg,
+  .btn-sm {
+    max-width: 100%;
+    white-space: normal;
+    height: auto;
+    text-align: center;
+  }
+
+  .page-hero-actions .btn.ml-2,
+  .text-center .btn.ml-2 {
+    margin-left: 0 !important;
+  }
+
+  /* Gallery controls & album headers on narrow screens (320px-375px) */
+  .gcc-view-controls,
+  .gallery-view-switcher {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .gallery-view-switcher .view-mode-btn {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .album-folder-info,
+  .album-folder-badges {
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .album-folder-path {
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  .flagship-img-overlay {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Chatbot widget fit on small mobile screens */
+  .chatbot-launcher {
+    right: 16px;
+    bottom: 16px;
+    max-width: calc(100vw - 32px);
+  }
+
+  .chatbot-window {
+    right: 12px;
+    left: 12px;
+    bottom: 74px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 96px);
+  }
+}

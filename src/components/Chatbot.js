@@ -144,7 +144,7 @@ function setupChatInteractions(container) {
 
   closeBtn.addEventListener("click", closeChat);
 
-  document.addEventListener("keydown", (e) => {
+  if (typeof document !== "undefined" && typeof document.addEventListener === "function") document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && dialog.classList.contains("open")) {
       closeChat();
     }

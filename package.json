@@ -1,22 +1,22 @@
 {
   "name": "flexonsports",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "type": "module",
-  "devDependencies": {
-    "vite": "^6.4.5"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test:responsive": "playwright test",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
   }
 }

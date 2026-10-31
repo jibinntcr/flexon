@@ -11,7 +11,7 @@ export function renderContactPage() {
   container.className = "page-contact";
 
   // Check URL query parameters for prefill
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const prefillInterest = params.get("interest") || params.get("type") || "general";
   const prefillSubject = params.get("subject") || "";
 

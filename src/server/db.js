@@ -26,6 +26,7 @@ const STORAGE_KEYS = {
  */
 function readStorage(key, fallback = []) {
   try {
+    if (typeof window === "undefined" || typeof localStorage === "undefined") return fallback;
     const raw = localStorage.getItem(key);
     return raw ? JSON.parse(raw) : fallback;
   } catch (err) {
@@ -39,6 +40,7 @@ function readStorage(key, fallback = []) {
  */
 function writeStorage(key, data) {
   try {
+    if (typeof window === "undefined" || typeof localStorage === "undefined") return;
     localStorage.setItem(key, JSON.stringify(data));
   } catch (err) {
     console.error(`[FlexonDB] Storage write error on ${key}:`, err);
@@ -431,4 +433,4 @@ export const FlexonDB = {
 };
 
 // Seed sample data on initialization
-FlexonDB.seedInitialDataIfEmpty();
+if (typeof window !== "undefined") FlexonDB.seedInitialDataIfEmpty();

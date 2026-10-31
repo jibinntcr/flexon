@@ -1095,7 +1095,8 @@ export function renderGalleryPage() {
   });
 
   // Listen for runtime backend updates via `window.FlexonGalleryAPI`
-  window.addEventListener("flexon:gallery-updated", () => {
+  if (typeof window !== "undefined" && typeof window.addEventListener === "function") window.addEventListener("flexon:gallery-updated", () => {
+    if (!container.isConnected) return;
     albums = getAllGalleryAlbums();
     const totalP = albums.reduce((s, a) => s + a.items.length, 0);
     const pPill = container.querySelector("#hero-total-photos-pill");

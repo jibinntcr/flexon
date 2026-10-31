@@ -21,8 +21,8 @@ export class Lightbox {
     this.previouslyFocused = null;
     this.touchStartX = 0;
     this.touchEndX = 0;
-    this.createDom();
-    this.bindEvents();
+    if (typeof document !== "undefined" && document.body) { this.createDom(); this.bindEvents(); }
+    // bound above when document exists
   }
 
   createDom() {
@@ -210,7 +210,8 @@ export class Lightbox {
   }
 
   open(items, startIndex = 0, startSlideshow = false) {
-    if (!items || items.length === 0) return;
+    if (!items || items.length === 0 || typeof document === "undefined") return;
+    if (!this.el) { this.createDom(); this.bindEvents(); }
 
     if (!document.body.contains(this.el)) {
       document.body.appendChild(this.el);
