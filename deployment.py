@@ -12,11 +12,9 @@ Safety Guarantees:
 - Reads VPS credentials from .env.deploy.local (git-ignored) or environment variables.
 """
 
-import io
 import os
 import subprocess
 import sys
-import tarfile
 import time
 from datetime import datetime
 from pathlib import Path
@@ -29,26 +27,6 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT_DIR = Path(__file__).resolve().parent
-
-EXCLUDE_DIRS = {
-    ".git",
-    ".next",
-    "node_modules",
-    ".venv",
-    "test-results",
-    "playwright-report",
-    "__pycache__",
-    "Photos",
-    "Team",
-    "LogoAssets",
-    "Website Plan",
-}
-
-EXCLUDE_FILES = {
-    ".env.deploy.local",
-    ".DS_Store",
-    "package-lock.json",
-}
 
 
 def load_env_file(env_path: Path) -> None:
@@ -83,7 +61,7 @@ def run_local(cmd: list[str], check: bool = True) -> subprocess.CompletedProcess
     return result
 
 
-def step_git_commit_and_push(commit_msg: str) -> bool:
+def step_git_commit_and_push(commit_msg: str) -> str:
     """Stage, commit, and push local changes to Git origin."""
     print("\n[1/5] Staging, committing, and pushing code to Git...")
     name_chk = run_local(["git", "config", "user.name"], check=False)
@@ -104,37 +82,12 @@ def step_git_commit_and_push(commit_msg: str) -> bool:
     branch_res = run_local(["git", "rev-parse", "--abbrev-ref", "HEAD"], check=True)
     branch = branch_res.stdout.strip() or "main"
 
-    push_res = run_local(["git", "push", "origin", branch], check=False)
-    if push_res.returncode == 0:
-        print(f"  Successfully pushed to origin/{branch}.")
-        return True
-    else:
-        print(
-            f"  [Notice] git push returned code {push_res.returncode}. "
-            "Proceeding with direct SFTP + Git repository sync to VPS."
-        )
-        return False
+    run_local(["git", "push", "origin", branch], check=True)
+    print(f"  Successfully pushed to origin/{branch}.")
+    return branch
 
 
-def create_project_tarball() -> bytes:
-    """Create an in-memory .tar.gz archive of the project source files."""
-    buf = io.BytesIO()
-    with tarfile.open(fileobj=buf, mode="w:gz") as tar:
-        for item in ROOT_DIR.rglob("*"):
-            rel_parts = item.relative_to(ROOT_DIR).parts
-            if any(part in EXCLUDE_DIRS for part in rel_parts):
-                continue
-            if item.is_file() and item.name in EXCLUDE_FILES:
-                continue
-            if item.is_file() and item.name.startswith(".env") and item.name.endswith(".local"):
-                continue
-            arcname = "/".join(rel_parts)
-            tar.add(str(item), arcname=arcname, recursive=False)
-    buf.seek(0)
-    return buf.read()
-
-
-def run_remote(ssh: paramiko.SSHClient, command: str, timeout: int = 300, check: bool = True) -> str:
+def run_remote(ssh: paramiko.SSHClient, command: str, timeout: int = 600, check: bool = True) -> str:
     """Run a shell command on the remote VPS and stream/return output."""
     print(f"  [VPS] $ {command}")
     stdin, stdout, stderr = ssh.exec_command(command, timeout=timeout)
@@ -175,55 +128,40 @@ def deploy_to_vps() -> None:
     )
 
     # 1. Commit & push to Git
-    step_git_commit_and_push(commit_msg)
+    branch = step_git_commit_and_push(commit_msg)
 
-    # 2. Package clean source tarball
-    print("\n[2/5] Packaging project source archive for deployment...")
-    tar_bytes = create_project_tarball()
-    print(f"  Created source archive ({len(tar_bytes) / (1024 * 1024):.2f} MB)")
-
-    # 3. Connect to VPS & create safe backup of existing /var/www/flexon-sports
-    print(f"\n[3/5] Connecting to VPS ({user}@{host}:{port})...")
+    # 2. Connect to VPS & create safe backup of existing /var/www/flexon-sports
+    print(f"\n[2/5] Connecting to VPS ({user}@{host}:{port}) and backing up {app_dir}...")
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(host, port=port, username=user, password=password, timeout=30)
+    transport = ssh.get_transport()
+    if transport:
+        transport.set_keepalive(15)
 
     try:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_dir = f"/var/www/flexon-sports-backup-{timestamp}"
 
-        print(f"  Backing up existing {app_dir} to {backup_dir} (excluding node_modules/.next)...")
         backup_cmd = (
             f"mkdir -p {backup_dir} && "
             f"rsync -a --exclude='node_modules' --exclude='.next' {app_dir}/ {backup_dir}/"
         )
         run_remote(ssh, backup_cmd, timeout=120)
 
-        # Upload source archive to /tmp/flexon-next-deploy.tar.gz
-        remote_tar = "/tmp/flexon-next-deploy.tar.gz"
-        print(f"  Uploading source archive to {remote_tar} via SFTP...")
-        sftp = ssh.open_sftp()
-        try:
-            with sftp.file(remote_tar, "wb") as rf:
-                rf.write(tar_bytes)
-        finally:
-            sftp.close()
-
-        # 4. Replace code in /var/www/flexon-sports while preserving .env & data files, then build
-        print(f"\n[4/5] Updating {app_dir} and building production Next.js bundle...")
-        staging_dir = "/tmp/flexon-next-staging"
-        extract_and_sync_cmd = " && ".join(
+        # 3. Pull latest code from Git on VPS and sync into /var/www/flexon-sports
+        print(f"\n[3/5] Pulling latest '{branch}' from {git_remote} into {app_dir}...")
+        staging_dir = "/tmp/flexon-git-staging"
+        git_sync_cmd = " && ".join(
             [
                 f"rm -rf {staging_dir}",
-                f"mkdir -p {staging_dir}",
-                f"tar -xzf {remote_tar} -C {staging_dir}",
-                f"rm -f {remote_tar}",
-                # Sync new project files into /var/www/flexon-sports while preserving .env and db files
+                f"git clone --depth 1 --branch {branch} {git_remote} {staging_dir}",
+                # Sync code + .git into /var/www/flexon-sports while preserving existing .env and data files
                 (
                     f"rsync -a --delete "
-                    f"--exclude='.git' "
                     f"--exclude='node_modules' "
                     f"--exclude='.next' "
+                    f"--exclude='package-lock.json' "
                     f"--exclude='.env' "
                     f"--exclude='.env.local' "
                     f"--exclude='registrations.db' "
@@ -232,13 +170,12 @@ def deploy_to_vps() -> None:
                     f"{staging_dir}/ {app_dir}/"
                 ),
                 f"rm -rf {staging_dir}",
-                # Point git remote in /var/www/flexon-sports to the new repo
-                f"cd {app_dir} && (git remote set-url origin {git_remote} 2>/dev/null || true)",
             ]
         )
-        run_remote(ssh, extract_and_sync_cmd, timeout=180)
+        run_remote(ssh, git_sync_cmd, timeout=180)
 
-        # Install clean production dependencies for Linux and build Next.js production app
+        # 4. Install production dependencies and build Next.js production app
+        print(f"\n[4/5] Installing production dependencies and building Next.js app in {app_dir}...")
         build_cmd = (
             f"cd {app_dir} && "
             f"rm -rf .next node_modules package-lock.json && "
